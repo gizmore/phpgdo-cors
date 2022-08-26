@@ -67,8 +67,9 @@ final class Module_CORS extends GDO_Module
 	{
 		if ($this->cfgAllowAny())
 		{
-			if ($cors = Common::getRequestString('cors'))
+			if ($cors = Common::getRequestString('_cors'))
 			{
+				unset($_REQUEST['_cors']);
 				return $cors;
 			}
 			if ($cors = @$_SERVER['HTTP_ORIGIN'])
