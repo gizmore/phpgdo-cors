@@ -40,7 +40,7 @@ final class Module_CORS extends GDO_Module
 		$this->addJS('js/gdo6-cors.js');
 	}
 
-	public function onModuleInit()
+	public function onModuleInit(): void
 	{
 // 		if (@$_SERVER['REQUEST_METHOD'] === 'OPTIONS')
 // 		{

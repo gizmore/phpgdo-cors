@@ -2,6 +2,7 @@
 namespace GDO\CORS\Method;
 
 use GDO\Core\Application;
+use GDO\Core\GDT;
 use GDO\Core\Method;
 
 /**
@@ -15,7 +16,7 @@ use GDO\Core\Method;
 final class SetCookie extends Method
 {
 
-	public function execute()
+	public function execute(): GDT
 	{
 		$path = $this->getModule()->filePath('img/pixel.png');
 		$picture = file_get_contents($path);
@@ -23,12 +24,12 @@ final class SetCookie extends Method
 		hdr('Content-Size: ' . strlen($picture));
 		$app = Application::$INSTANCE;
 		$app->timingHeader();
-
 		# out
 		if (!$app->isUnitTests())
 		{
-			die($picture);
+			echo $picture;
 		}
+		return Application::exit();
 	}
 
 }
