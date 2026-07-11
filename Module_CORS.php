@@ -42,22 +42,19 @@ final class Module_CORS extends GDO_Module
 
 	public function onModuleInit(): void
 	{
-// 		if (@$_SERVER['REQUEST_METHOD'] === 'OPTIONS')
-// 		{
-		# Origin
-		hdr('Access-Control-Allow-Origin: ' . $this->getOrigin());
+        # Origin
+        hdr('Access-Control-Allow-Origin: ' . $this->getOrigin());
 
-		# Credentials
-		if ($this->cfgAllowCredentials())
-		{
-			hdr('Access-Control-Allow-Credentials: true');
-		}
+        # Credentials
+        if ($this->cfgAllowCredentials())
+        {
+            hdr('Access-Control-Allow-Credentials: true');
+        }
 
-		# Options
-		hdr('Access-Control-Allow-Headers: Content-Type, Authorization, Cookie, Accept, x-csrf-token');
-		hdr('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-		hdr('Access-Control-Expose-Headers: Set-Cookie');
-// 		}
+        # Options
+        hdr('Access-Control-Allow-Headers: Content-Type, Authorization, Cookie, Accept, x-csrf-token');
+        hdr('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+        hdr('Access-Control-Expose-Headers: Set-Cookie');
 	}
 
 	############
