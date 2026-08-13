@@ -52,7 +52,7 @@ final class Module_CORS extends GDO_Module
         }
 
         # Options
-        hdr('Access-Control-Allow-Headers: Content-Type, Authorization, Cookie, Accept, x-csrf-token');
+		hdr('Access-Control-Allow-Headers: Content-Type, Authorization, Cookie, Accept, x-csrf-token, Cache-Control, Pragma, no-cache');
         hdr('Access-Control-Allow-Methods: GET, POST, OPTIONS');
         hdr('Access-Control-Expose-Headers: Set-Cookie');
 	}
